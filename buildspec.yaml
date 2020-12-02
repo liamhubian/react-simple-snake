@@ -1,13 +1,14 @@
 version: 0.2
-run-as: build_user
+run-as: root
 
 phases:
-  install:
-    run-as: root
-    commands:
-      - useradd build_user
-      - chown -R build_user:build_user .
+  #  install:
+  #    run-as: root
+  #    commands:
+  #      - useradd build_user
+  #      - chown -R build_user:build_user .
   build:
+    run-as: root
     commands:
       - echo "start build step"
       - npm install
