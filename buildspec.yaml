@@ -16,7 +16,7 @@ phases:
       commands:
         - chmod +x scripts/*
 
-  artifacts:
-    files:
-      - '**/*'
-    name: artifact.zip
+          #  artifacts:
+          #    files:
+          #      - '**/*'
+          #    name: artifact.zip
