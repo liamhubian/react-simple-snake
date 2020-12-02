@@ -1,0 +1,22 @@
+version: 0.2
+run-as: build_user
+
+phases:
+  install:
+    run-as: root
+    commands:
+      - useradd build_user
+      - chown -R build_user:build_user .
+  build:
+    commands:
+      - echo "start build step"
+      - npm install
+      - npm run build
+    post_build:
+      commands:
+        - chmod +x scripts/*
+
+  artifacts:
+    files:
+      - '**/*'
+    name: artifact.zip
